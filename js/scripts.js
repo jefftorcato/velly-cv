@@ -29,7 +29,7 @@ jQuery(function ($) {
             $("snackbar").hide(); 
         }, 3000);
     }
-
+    var request;
     $("#contactForm").submit(function (event){
 
         // Prevent default posting of form - put here to work in case of errors
@@ -87,5 +87,5 @@ jQuery(function ($) {
             $inputs.prop("disabled", false);   
         });
     });
-    
+
 }); // JQuery end
