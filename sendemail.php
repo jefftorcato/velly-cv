@@ -65,4 +65,7 @@
 
     echo json_encode( $result );
 
+    
+
     die;
+    location.header(./index.html);
