@@ -55,7 +55,7 @@ jQuery(function ($) {
 
         // Fire off the request to /form.php
         request = $.ajax({
-            url: "/php/sendemail.php",
+            url: "sendemail.php",
             type: "post",
             data: serializedData
         });
