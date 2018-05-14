@@ -10,7 +10,9 @@ jQuery(function ($) {
         $('#preloader').delay(200).fadeOut('slow');
     }());
 
-
+    $(document).ready(function(){
+        $('#snackbar').hide();
+    });
 
     // --------------------------------------------------------------------
     // Sticky Sidebar
@@ -18,17 +20,6 @@ jQuery(function ($) {
 
     $('.left-col-block, .right-col-block').theiaStickySidebar();
 
-
-    function myFunction(msg) {
-
-        $("#snackbar").text(msg);
-        $("#snackbar").show();
-        
-        // After 3 seconds, remove the show class from DIV
-        setTimeout(function(){ 
-            $("snackbar").hide(); 
-        }, 3000);
-    }
     var request;
     $("#contactForm").submit(function (event){
 
@@ -64,8 +55,14 @@ jQuery(function ($) {
             request.done(function (response, textStatus, jqXHR) {
             // Log a message to the console
             console.log("Hooray, it worked!");
-            var msg = "Thank you for contacting."
-            myFunction(msg);
+            var msg = "Thank you for contacting.";
+            $("#snackbar").text(msg);
+            $("#snackbar").fadeIn();
+            
+            // After 3 seconds, remove the show class from DIV
+            setTimeout(function(){ 
+                $("#snackbar").fadeOut(); 
+            }, 3000);
             $('#contactForm')[0].reset();
         });
 
@@ -77,7 +74,15 @@ jQuery(function ($) {
                 textStatus, errorThrown
             );
             var msg = "Sorry.. couldn't send an email."
-            myFunction(msg);
+            
+            $("#snackbar").text(msg);
+            $("#snackbar").fadeIn();
+            
+            // After 3 seconds, remove the show class from DIV
+            setTimeout(function(){ 
+                $("#snackbar").fadeOut(); 
+            }, 3000);
+        
         });
 
         // Callback handler that will be called regardless

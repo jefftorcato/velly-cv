@@ -20,6 +20,7 @@
 
         $result = array( 'response' => 'error', 'empty'=>'name', 'message'=>'<strong>Error!</strong> Name is empty.' );
         echo json_encode($result );
+        return (404);
         die;
     } 
 
