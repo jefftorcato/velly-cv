@@ -21,7 +21,7 @@ jQuery(function ($) {
 
     function myFunction(msg) {
 
-        ("#snackbar").text(msg);
+        $("#snackbar").text(msg);
         $("#snackbar").show();
         
         // After 3 seconds, remove the show class from DIV
