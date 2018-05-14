@@ -66,6 +66,7 @@
     echo json_encode( $result );
 
     
-
+    return($result);
     die;
-    location.header(./index.html);
+    
+
